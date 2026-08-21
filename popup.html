@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>WebRTC QoS Monitor</title>
+<link rel="stylesheet" href="ui.css" />
+<style>
+  body { width: 320px; }
+</style>
+</head>
+<body>
+  <div class="panel">
+    <header class="panel__header">
+      <div class="dot" id="statusDot"></div>
+      <div>
+        <div class="title">WebRTC QoS Monitor</div>
+        <div class="subtitle" id="statusText">checking&hellip;</div>
+      </div>
+    </header>
+
+    <div class="row row--switch">
+      <span>Monitoring</span>
+      <label class="switch">
+        <input type="checkbox" id="monitoringToggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat__value" id="localCount">&mdash;</div>
+        <div class="stat__label">events stored locally</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <span>This page</span>
+      <span id="currentPlatform" class="pill">unknown</span>
+    </div>
+
+    <div class="actions">
+      <button id="exportBtn" class="btn">Export JSON</button>
+      <button id="clearBtn" class="btn btn--ghost">Clear local logs</button>
+    </div>
+
+    <button id="openOptions" class="link">Open settings &rarr;</button>
+  </div>
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

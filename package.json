@@ -1,0 +1,17 @@
+{
+  "name": "webrtc-monitor-extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/inject-source.js --bundle --format=iife --platform=browser --outfile=dist/inject.bundle.js",
+    "watch": "esbuild src/inject-source.js --bundle --format=iife --platform=browser --outfile=dist/inject.bundle.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@observertc/client-monitor-js": "^4.6.0",
+    "esbuild": "^0.28.2"
+  }
+}

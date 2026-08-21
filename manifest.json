@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "WebRTC QoS Monitor",
+  "version": "1.0.0",
+  "description": "Monitors WebRTC call quality (via ObserveRTC client-monitor-js) on Teams, Webex, Zoom, Talkdesk, Amazon Connect and other configurable sites. Logs locally in the browser.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "alarms",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://teams.microsoft.com/*",
+    "https://teams.live.com/*",
+    "https://*.teams.microsoft.com/*",
+    "https://*.talkdeskapp.com/*",
+    "https://*.mytalkdesk.com/*",
+    "https://*.awsapps.com/*",
+    "https://*.my.connect.aws/*",
+    "https://*.webex.com/*",
+    "https://*.zoom.us/*"
+  ],
+  "optional_host_permissions": [
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon48.png"
+  },
+  "options_page": "options.html",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
